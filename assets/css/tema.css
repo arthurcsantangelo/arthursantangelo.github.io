@@ -1,9 +1,365 @@
-*{
-    background-color: #484848;
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-h1 {
-    color: firebrick;
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
 }
-h1:hover {
-    color: firebrick;
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    width: 90%;
+    max-width: 900px;
+
+    background-color: #1a1510;
+    color: #e6a756;
+
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav a {
+    color: #e6a756;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 2px 5px;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* SEÇÕES */
+.section-full {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 100px 20px 40px;
+    text-align: center;
+}
+
+.section-full h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+/* CARTÕES */
+.card {
+    background-color: #fceea7;
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* HOME - TELA INTEIRA */
+#home {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.home-card {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    max-width: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+/* GIF COMO FUNDO */
+.bg-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+}
+
+/* NOME E LINGUAGENS */
+.home-content {
+    position: relative;
+    z-index: 2;
+
+    width: auto;
+    max-width: 90%;
+
+    padding: 0;
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+    color: #ffffff;
+
+    text-align: center;
+    text-shadow: 2px 2px 8px #000000;
+}
+
+.home-content h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 15px;
+}
+
+.home-content p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* PROJETOS */
+#projetos {
+    background-color: #ffffff;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1100px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px 15px;
+    min-height: 180px;
+
+    word-break: break-word;
+    overflow-wrap: anywhere;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.project-card a {
+    color: #000000;
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+
+.project-card a:hover {
+    color: #8a510d;
+}
+
+/* SOBRE */
+#sobre {
+    background-color: #ffffff;
+}
+
+.sobre-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+
+    width: 100%;
+    max-width: 1000px;
+    min-height: 300px;
+
+    padding: 40px;
+}
+
+/* FOTO DE PERFIL */
+.profile-img {
+    width: 140px;
+    height: 140px;
+    min-width: 140px;
+
+    border-radius: 50%;
+    border: 2px solid #000000;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ffffff;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXTO SOBRE */
+.about-text {
+    flex: 1;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.about-text p {
+    margin-bottom: 12px;
+}
+
+/* TABLETS */
+@media (max-width: 768px) {
+
+    .navbar {
+        width: 94%;
+        padding: 15px 18px;
+    }
+
+    .navbar .logo {
+        font-size: 0.95rem;
+    }
+
+    .navbar nav {
+        gap: 10px;
+    }
+
+    .navbar nav a {
+        font-size: 0.9rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sobre-card {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+
+    .navbar {
+        top: 10px;
+        flex-direction: column;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .navbar nav {
+        gap: 20px;
+    }
+
+    .navbar nav a {
+        font-size: 0.9rem;
+    }
+
+    .home-content h1 {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .section-full {
+        padding: 100px 15px 35px;
+    }
+
+    #home {
+        padding: 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-full h2 {
+        font-size: 1.7rem;
+    }
+
+    .sobre-card {
+        padding: 25px 18px;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+    }
 }
