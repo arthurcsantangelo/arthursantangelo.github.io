@@ -1,10 +1,12 @@
 name: Olá mundo cruel #nome da action
+ 
 #gatilho, qnd a action vai rodar
 on:
   push:
     branches: ['main']
+ 
 #cria as tarefas que devem ser executadas
-jobs: 
+jobs:
   saudacao: #nome da tarefa
     runs-on: ubuntu-latest #onde tem que rodar
     steps:
@@ -12,8 +14,12 @@ jobs:
         run: echo "Olá mundo cruel"
       - name: Resposta
         run: echo "A extinção está chegando"
-      - name: verificar se é humano
-        run: echo "qual a resposta de 2 + 2"
-      - name: Resposta do captcha
-        run: echo "$((2 + 2))"
+  adeus:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "O fim"
+      run: echo "Após uma tempestade solar, a humanidade virou churras"
+    - name: "Nova era"
+      run: echo "Uma nova raça animal domina o planeta"
+ 
  
