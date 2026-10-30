@@ -1,8 +1,12 @@
-const { somar, subtrair, multiplicar, dividir } = require("../src/matematica");
+const { somar, subtrair, multiplicar, dividir, potencia } = require("../src/matematica");
 
 describe("operações matemáticas", () => {
   test("soma dois números", () => {
     expect(somar(2, 3)).toBe(5);
+  });
+
+  test("calcula a potência de um número", () => {
+    expect(potencia(2, 3)).toBe(8);
   });
 
   test("subtrai dois números", () => {
@@ -17,7 +21,7 @@ describe("operações matemáticas", () => {
     expect(dividir(10, 2)).toBe(5);
   });
 
-  test("impede divisão por zero", () => {
+  test("calcula a potência de um número", () => {
     expect(() => dividir(10, 0)).toThrow("Não é possível dividir por zero.");
   });
 });
